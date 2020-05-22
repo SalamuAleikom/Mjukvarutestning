@@ -1,7 +1,7 @@
 ##### MAIN MENU #####
 
-### Försöker ärva från budget
-class UltimateTracker(Buget):
+
+class UltimateTracker():
   
   def __init__(self):
         self.mainMenu()
