@@ -4,6 +4,7 @@ from datetime import date
 class Transaction:
 
     transactions = []
+    trans_id = 0
 
     def __init__(self, name, amount, category, date):
         self.name = name
@@ -11,17 +12,16 @@ class Transaction:
         self.category = category
         self.date = date
         self.Add_Transaction()
-    
+
+
     def Add_Transaction(self):
-        self.transactions.append("{} {} {} {}".format(
-            self.name, self.category, self.date, self.amount))
+        Transaction.trans_id += 1
+        Transaction.transactions.append("id:{}, {} {} {} {}".format(self.trans_id, self.name, self.category, self.amount, self.date))
 
 
-    def get_transac(self):
-        return '{} \nType: {} \nDate: {} \nAmount: {}'.format(self.name, self.category, self.date, self.amount)
-    
-    def get_all_transc(self):
-        for x in self.transactions:
+
+    def get_all_transc():
+        for x in Transaction.transactions:
             print(x)
 
 
@@ -30,7 +30,6 @@ trans_2 = Transaction("willys", 1000, "food", date.today())
 trans_3 = Transaction("lidl", 500, "food", date.today())
 trans_4 = Transaction("tempo", 100, "food", date.today())
 
-trans = Transaction()
 # print(trans_1.get_transac())
-trans.get_all_transc()
+Transaction.get_all_transc()
 
