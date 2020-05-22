@@ -39,4 +39,7 @@ class UltimateTracker(Buget):
             self.mainMenu()
 
 
+if __name__ == '__main__':
+
+    UltimateTracker()
 
